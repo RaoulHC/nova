@@ -963,6 +963,23 @@ need to shut down cleanly.
 Possible values:
 
 * Any positive integer in seconds (default value is 60).
+"""),
+    cfg.IntOpt("shutdown_retry_interval",
+            default=10,
+            min=1,
+            help="""
+Time to wait before resending an acpi shutdown signal.
+
+Used in all the same situations as the shutdown_timeout setting, it controls
+the period of shutdown signals (in seconds). Default interval is 10 seconds.
+
+Possible values:
+
+* Any positive integer in seconds (default value is 10)
+
+Related options:
+
+* shutdown_timeout
 """)
 ]
 
